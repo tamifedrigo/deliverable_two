@@ -1,41 +1,33 @@
-var rain = "*";
-let grain = 50;
+let rain = prompt("How many inches of rain fell?")
 
-var rainfall = window.prompt("How many inches of rain fell");
-document.write(rain.repeat(rainfall));
+let rainOutput = "";
 
-if(rainfall===10){
-  window.prompt(fertilizer("Did you use fertilizer?"));
+for (let i = 0; i < rain; i++) {
+  rainOutput += "*"
 }
 
+console.log(rainOutput);
 
-if(rainfall>=20){
-  window.prompt(fertilizer("did you use fertilizer?"));
+let yield = 50;
+
+if (rain >= 20) {
+  yield = yield * .9
+} else if (rain < 10) {
+  yield = yield * .8
 }
 
-if(rainfall<10){
-  grain * 0.80; window.prompt(fertilizer("did you use fertilizer?"));
+let fertilizer = prompt("Did you use fertilizer? (enter 'yes' or 'no')");
+
+if (fertilizer === "yes") {
+  let fertilizerType = prompt("What type of fertilizer did you use? (enter 'premium' or 'regular')")
+
+  if (fertilizerType === "premium") {
+    yield = yield * 1.15;
+  } else if (fertilizerType === "regular") {
+    yield = yield * 1.1;
+  }  
+} else if(fertilizer === "no") {
 }
 
-var fertilizer = window.prompt("Did you use fertilizer?");
-if (fertilizer === yes,y,Yes){
-  window.prompt(premiumRegular("did you use premium or regular fertilizer?"));
-}else{
-
-  if(fertilizer===no,n,No){
-    console.log("the yield should be" + grain, "bushels per acre");
-  }
-}
-var premiumRegular = window.prompt("did you use premium or regular fertilizer?");
-
-if (premiumRegular===Premium,premium){
-  grain * 1.15;
-
-}else{
-  
-  if(premiumRegular===Regular,regular){
-    grain * 1.10;
-
-console.log("the yield should be" + grain, "bushels per acre")
-  }
-}
+let result = yield + " bushels of grain were produced."
+console.log(result);
